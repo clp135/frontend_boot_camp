@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로필 | 오유림</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!--상단 버튼-->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Frontend Boot Camp</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--메인 콘텐츠-->
+    <main>
+        <!--그라데이션 배경 넣을 부분-->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <!--프로필 사진-->
+                <div class="profile-image-container">
+                    <img 
+                        src="profile.png"
+                        alt="프로필 사진"
+                        loading="lazy"
+                    >
+                </div>
+
+                <!--소개-->
+                <h1 class="hero-title">
+                    안녕하세요, 저는 컴퓨터과학과 24학번 오유림입니다.
+                </h1>
+                <p class="hero-subtitle">웹 개발을 공부하고 싶은 대학생</p>
+                <p class="hero-description">
+                    잘 부탁드립니다!
+                </p>
+            </div>
+        </section>
+        
+        <!--정보 기재-->
+        <section class="content-section" id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p> 게임 개발과 웹 개발에 관심이 많은 대학생입니다. 강아지를 좋아하여 프로필 사진에 강아지를 넣어봤습니다.
+                </p>
+            </div>
+        </section>
+        
+        <!--포트폴리오 카드-->
+        <section class="content-section" id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="card">
+                    <img src="https://placehold.co/600x400/8ec5fc/ffffff?text=Project+1" alt="프로젝트 1 이미지">
+                    <div class="card-content">
+                        <h3>제목 1</h3>
+                        <p>아직 구체적인</p>
+                        <a href="#" class="card-link">자세히 보기 &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/e0c3fc/ffffff?text=Project+2" alt="프로젝트 2 이미지">
+                    <div class="card-content">
+                        <h3>제목 2</h3>
+                        <p>프로젝트 경험은</p>
+                        <a href="#" class="card-link">자세히 보기 &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/a8e063/ffffff?text=Project+3" alt="프로젝트 3 이미지">
+                    <div class="card-content">
+                        <h3>제목 3</h3>
+                        <p>없습니다. ㅜㅜ</p>
+                        <a href="#" class="card-link">자세히 보기 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--연락처-->
+        <section class="content-section" id="contact">
+            <h2>Contact</h2>
+            <p>clp135@naver.com</p>
+        </section>
+    </main>
+
+    <script>
+      feather.replace()
+    </script>
+</body>
+</html>
