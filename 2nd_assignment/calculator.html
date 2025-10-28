@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Calculator(UI)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="calculator" aria-label="Google Calculator Mock">
+      <!--Display-->
+      <div class="display">
+        <div class="expression"></div>
+        <div class="value">0</div>
+      </div>
+
+      <div class="row-top">
+        <!--Rad|Deg-->
+        <button class="btn light split">
+          <span class="seg seg-active">Rad</span>
+          <span class="pipe" aria-hidden="true"></span>
+          <span class="seg">Deg</span>
+        </button>
+
+        <button class="btn light">x!</button>
+        <button class="btn light">(</button>
+        <button class="btn light">)</button>
+        <button class="btn light">%</button>
+        <button class="btn light">AC</button>
+
+      </div>
+
+      <!--keypad-->
+      <div class="keys">
+        <!--row 1-->
+        <button class="btn light">Inv</button>
+        <button class="btn light">sin</button>
+        <button class="btn light">ln</button>
+        <button class="btn pale">7</button>
+        <button class="btn pale">8</button>
+        <button class="btn pale">9</button>
+        <button class="btn light">÷</button>
+
+        <!--row 2-->
+        <button class="btn light">π</button>
+        <button class="btn light">cos</button>
+        <button class="btn light">log</button>
+        <button class="btn pale">4</button>
+        <button class="btn pale">5</button>
+        <button class="btn pale">6</button>
+        <button class="btn light">×</button>
+
+        <!--row 3-->
+        <button class="btn light">e</button>
+        <button class="btn light">tan</button>
+        <button class="btn light">√</button>
+        <button class="btn pale">1</button>
+        <button class="btn pale">2</button>
+        <button class="btn pale">3</button>
+        <button class="btn light">−</button>
+
+        <!--row 4-->
+        <button class="btn light">Ans</button>
+        <button class="btn light">EXP</button>
+        <button class="btn light">x<sup>y</sup></button>
+        <button class="btn pale">0</button>
+        <button class="btn pale">.</button>
+        <button class="btn equals">=</button>
+        <button class="btn light">+</button>
+      </div>
+
+      <!--bottom bar-->
+      <div class="helper">
+        <button class="btn helper-btn">
+          수학 문제 풀이
+          <span class="chev" aria-hidden="true">›</span>
+        </button>
+        <div class="feedback">의견</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
