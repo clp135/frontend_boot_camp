@@ -85,10 +85,11 @@ body{
 .btn.equals:active{ background:var(--blue-press); }
 
 .split{
-  display:flex;
+  /* display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:12px; */
+  display:grid; grid-template-columns: 1fr 1px 1fr;
 }
 .split .pipe{ width:1px; height:18px; background:#d9ddea; display:inline-block; }
 .split .seg{ color:#111827; }

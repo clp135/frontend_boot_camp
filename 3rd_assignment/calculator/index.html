@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>계산기</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="wrap">
+    <!-- FR5: 가장 최근 연산 기록 하나를 볼 수 있는 버튼 -->
+    <button id="btn-last" aria-label="최근 연산 기록 보기">⟲ 최근 연산</button>
+
+    <div class="card">
+      <!-- FR2: 상단에 현재까지의 입력 표시 -->
+      <div class="display">
+        <div id="history" class="history" aria-live="polite"></div>
+        <div id="screen" class="screen" aria-live="polite">0</div>
+      </div>
+
+      <!-- FR1: 숫자와 사칙연산 버튼 -->
+      <div class="keys">
+        <button data-action="clear-all" class="key key-func">C</button>
+        <button data-action="clear-entry" class="key key-func">CE</button>
+        <button data-action="del" class="key key-func">⌫</button>
+        <button data-op="/" class="key key-op">÷</button>
+
+        <button data-num="7" class="key">7</button>
+        <button data-num="8" class="key">8</button>
+        <button data-num="9" class="key">9</button>
+        <button data-op="*" class="key key-op">×</button>
+
+        <button data-num="4" class="key">4</button>
+        <button data-num="5" class="key">5</button>
+        <button data-num="6" class="key">6</button>
+        <button data-op="-" class="key key-op">−</button>
+
+        <button data-num="1" class="key">1</button>
+        <button data-num="2" class="key">2</button>
+        <button data-num="3" class="key">3</button>
+        <button data-op="+" class="key key-op">+</button>
+
+        <button data-num="0" class="key key-zero">0</button>
+        <button data-dot="." class="key">.</button>
+        <!-- FR3: '=' 버튼을 누르면 결과가 화면에 표시 -->
+        <button data-action="equals" class="key key-eq">=</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

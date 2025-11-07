@@ -1,0 +1,201 @@
+:root{
+  --bg: #eafbe7;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+
+  /* 버튼 색깔 */
+  --green: #58c27d;
+  --green-hover: #4db973;
+  --green-ghost: #dff4e7;
+
+  --border: #dfe7da;
+  --shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Apple SD Gothic Neo, "Noto Sans KR", "Malgun Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container{
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+h1{
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.clock-card{
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 20px 16px;
+  box-shadow: var(--shadow);
+}
+
+.battery{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.battery-icon{
+  position: relative;
+  width: 54px;
+  height: 28px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  background: #fff;
+}
+.battery-cap{
+  position: absolute;
+  right: -6px;
+  top: 6px;
+  width: 6px;
+  height: 16px;
+  background: #111;
+  border-radius: 0 3px 3px 0;
+}
+.battery-text{
+  font-weight: 700;
+}
+
+.row.label{
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.clock-display{
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px 16px;
+  min-height: 52px;
+  font-size: 20px;
+  display:flex;
+  align-items:center;
+}
+
+/* 배터리 0%일 때 시간 영역 가리기 */
+.clock-display.blackout{
+  background: #000;
+  color: #000;
+}
+
+/* 알람 입력 영역 */
+.alarm-inputs{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.alarm-inputs input{
+  width: 84px;
+  height: 40px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+}
+.alarm-inputs .unit{
+  margin-right: 8px;
+  color: var(--muted);
+}
+
+/* 버튼 */
+.btn{
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover{ background: var(--green-hover); }
+.btn:disabled{ opacity:.5; cursor: not-allowed; }
+.btn.outline{
+  background: var(--green-ghost);
+  color: #1a6c3d;
+  border: 1px solid #bce7cc;
+}
+
+/* 알람 리스트 */
+.alarm-list{
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  min-height: 56px;
+}
+.alarm-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #edf2ea;
+}
+.alarm-item:last-child{ border-bottom: none; }
+
+.alarm-left{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.alarm-title{
+  font-weight: 700;
+}
+.alarm-remaining{
+  color: var(--muted);
+  font-size: 14px;
+}
+.badge{
+  display:inline-block;
+  font-size:12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #ecfdf0;
+  border: 1px solid #c7efd6;
+  color: #1a6c3d;
+}
+
+.limit-msg{
+  margin: 8px 2px 0;
+  color: #b91c1c;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+/* 최근 알림 길이(FR5) 영역 */
+.recent-row{
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #eef1ea;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.recent-text{ color: var(--muted); }
+
+.mt16{ margin-top: 16px; }
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
