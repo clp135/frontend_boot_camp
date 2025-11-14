@@ -1,0 +1,183 @@
+/* 공통 설정 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* color tokens */
+  --color-bg: #e6f9e6;
+  --color-card: #ffffff;
+  --color-primary: #22c55e;
+  --color-primary-dark: #16a34a;
+  --color-accent: #d9f99d;
+  --color-accent-dark: #bef264;
+  --color-border: #cce3c9;
+  --color-text-main: #14532d;
+  --color-text-muted: #6b7280;
+  --color-error: #b91c1c;
+  --color-success: #15803d;
+
+  --radius-card: 16px;
+  --radius-input: 8px;
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.06);
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* 유틸리티 */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 4px;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+/* 레이아웃 */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* 카드 */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px 24px 24px;
+}
+
+
+.card__title {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+/* 폼 */
+.signup-form {
+  width: 100%;
+}
+
+.form-row {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--color-text-main);
+}
+
+.form-row__inline {
+  display: flex;
+  gap: 8px;
+}
+
+/* 입력 */
+.input {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+}
+
+/* 체크박스 */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-main);
+}
+
+/* 버튼 */
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn--secondary {
+  background: var(--color-accent);
+  color: var(--color-text-main);
+  white-space: nowrap;
+}
+
+.btn--secondary:hover {
+  background: var(--color-accent-dark);
+}
+
+.btn--full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* 메시지 */
+.form-message {
+  min-height: 16px;
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.form-message--error {
+  color: var(--color-error);
+}
+
+.form-message--success {
+  color: var(--color-success);
+}
+
+.form-helper {
+  margin: 0;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* 성공 페이지 */
+.success-text {
+  font-size: 16px;
+  color: var(--color-text-main);
+}

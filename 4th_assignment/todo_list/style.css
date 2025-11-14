@@ -1,0 +1,414 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #e6f7e9;
+  --bg-card: #ffffff;
+  --accent: #38a15c;
+  --accent-soft: #c6ebcf;
+  --accent-dark: #2d7e48;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --border-light: #d1e7d6;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --radius-large: 18px;
+  --transition-fast: 0.15s ease;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans KR",
+    "Apple SD Gothic Neo", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-sans);
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.u-text-muted {
+  color: var(--text-muted);
+}
+
+/* 버튼 스타일 */
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    color var(--transition-fast);
+}
+
+/* 앱 전체 */
+.app {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px 32px;
+}
+
+.app-header {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.app-header p {
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 24px;
+}
+
+/* 카드 공통 */
+.week-panel,
+.todo-panel {
+  background: var(--bg-card);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  padding: 20px 22px;
+}
+
+/* 주간 */
+
+.week-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.current-week-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.nav-btn {
+  background: var(--accent-soft);
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.nav-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* 날짜 */
+.day-card {
+  background: #f3fbf5;
+  border-radius: 14px;
+  padding: 10px 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background var(--transition-fast), border-color var(--transition-fast),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.day-card:hover {
+  background: #e9f7ec;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.day-name {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.day-date {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.day-card.today {
+  border-color: var(--accent-soft);
+}
+
+.day-card.selected {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent-dark);
+  box-shadow: 0 10px 25px rgba(56, 161, 92, 0.3);
+}
+
+.day-card.selected .day-name {
+  color: #e0ffe7;
+}
+
+/* To-do */
+
+.todo-header {
+  margin-bottom: 10px;
+}
+
+.todo-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* 입력 */
+
+.todo-form {
+  border-radius: 14px;
+  background: #f3fbf5;
+  padding: 12px 12px 10px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.form-row-bottom {
+  margin-top: 8px;
+  justify-content: space-between;
+}
+
+.input {
+  border-radius: 999px;
+  border: 1px solid #d9e8dd;
+  padding: 8px 12px;
+  font-size: 14px;
+  flex: 1;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  background: #ffffff;
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 161, 92, 0.18);
+}
+
+.input-date {
+  border-radius: 999px;
+  min-width: 150px;
+}
+
+.select {
+  border-radius: 999px;
+  border: 1px solid #d9e8dd;
+  padding: 7px 30px 7px 12px;
+  font-size: 14px;
+  background: #ffffff;
+  outline: none;
+  appearance: none;
+  position: relative;
+}
+
+/* 카테고리, 버튼 묶음 */
+.category-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 버튼 변형 */
+.primary-btn {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(56, 161, 92, 0.35);
+}
+
+.primary-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  background: #e0f4e5;
+  color: var(--accent-dark);
+}
+
+.secondary-btn:hover {
+  background: #cbead3;
+  transform: translateY(-1px);
+}
+
+.due-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 할 일 목록 */
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.todo-list-empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 10px;
+  border-radius: 12px;
+  border: 1px solid #e2efe6;
+  margin-bottom: 6px;
+  background: #ffffff;
+  transition: background var(--transition-fast), transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.todo-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.todo-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.todo-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.todo-text {
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.todo-category {
+  font-size: 11px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.todo-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.todo-due {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.delete-btn {
+  background: #ffe5e5;
+  color: #b91c1c;
+  padding: 5px 10px;
+}
+
+.delete-btn:hover {
+  background: #ffcccc;
+  transform: translateY(-1px);
+}
+
+/* 완료된 할 일 */
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background: #d3e7d8;
+  border-radius: 999px;
+}
+
+/* 반응형 */
+@media (max-width: 880px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+
+  .week-panel {
+    order: 1;
+  }
+
+  .todo-panel {
+    order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .due-label {
+    width: 100%;
+  }
+
+  .input-date {
+    flex: 1;
+  }
+
+  .todo-right {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

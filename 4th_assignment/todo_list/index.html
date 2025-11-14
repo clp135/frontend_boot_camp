@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weekly To-Do Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Weekly To-Do Planner</h1>
+      <p class="u-text-muted">위클리 투두리스트</p>
+    </header>
+
+    <main class="app-main">
+      <!-- 주간 캘린더 -->
+      <section class="week-panel">
+        <div class="week-header">
+          <button id="prevWeek" class="nav-btn btn" aria-label="이전 주">◀</button>
+          <div class="current-week-label" id="currentWeekLabel"></div>
+          <button id="nextWeek" class="nav-btn btn" aria-label="다음 주">▶</button>
+        </div>
+
+        <div class="week-days" id="weekDays">
+          <!-- JS에서 요일 카드가 채워짐 -->
+        </div>
+      </section>
+
+      <!-- 일간 To-do -->
+      <section class="todo-panel">
+        <div class="todo-header">
+          <h2 id="selectedDateLabel">오늘의 할 일</h2>
+        </div>
+
+        <!-- 할 일 추가 -->
+        <form id="todoForm" class="todo-form">
+          <div class="form-row">
+            <input
+              type="text"
+              id="todoText"
+              class="input"
+              placeholder="할 일을 입력하세요"
+              required
+            />
+
+            <div class="category-group">
+              <select id="categorySelect" class="select">
+                <option value="공부" selected>공부</option>
+                <option value="업무">업무</option>
+                <option value="개인">개인</option>
+              </select>
+              <button type="button" id="addCategoryBtn" class="secondary-btn btn">
+                + 카테고리
+              </button>
+            </div>
+          </div>
+
+          <div class="form-row form-row-bottom">
+            <label class="due-label">
+              마감 날짜
+              <input type="date" id="dueDateInput" class="input input-date" />
+            </label>
+
+            <button type="submit" class="primary-btn btn">
+              할 일 추가
+            </button>
+          </div>
+        </form>
+
+        <!-- 할 일 목록 -->
+        <ul id="todoList" class="todo-list">
+          <!-- JS에서 목록이 채워짐 -->
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
